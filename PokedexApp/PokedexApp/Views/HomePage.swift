@@ -45,7 +45,7 @@ struct HomePageView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
                             Text("Begin")
                                 .frame(width: 320, height: 80)
                                 .font(.system(size: 36))
