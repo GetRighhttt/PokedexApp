@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomePage: View {
+struct HomePageView: View {
     
     @State var isActive = false
     var body: some View {
@@ -24,7 +24,7 @@ struct HomePage: View {
                         .resizable()
                         .renderingMode(.original)
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: .infinity, height: 150)
+                        .frame(width: 350, height: 150)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding(.top, 30)
                         .padding()
@@ -62,8 +62,8 @@ struct HomePage: View {
     }
 }
 
-struct HomePage_Previews: PreviewProvider {
+struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage()
+        HomePageView()
     }
 }
