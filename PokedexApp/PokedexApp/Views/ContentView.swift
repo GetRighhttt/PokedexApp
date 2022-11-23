@@ -9,10 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Hello, world!")
+        NavigationView {
+            ZStack {
+                Color("bg").ignoresSafeArea()
+                VStack {
+                    Text("Hello, world!")
+                }
+                .padding()
+            }
         }
-        .padding()
     }
 }
 

@@ -17,7 +17,7 @@ struct Splash: View {
          Fade Animation - realistic example.
          */
         ZStack {
-            ContentView()
+            HomePage()
             
             ZStack {
                 Color("bg")
@@ -30,6 +30,7 @@ struct Splash: View {
                     .foregroundColor(Color("font"))
                     .background(Color("bg"))
                     .cornerRadius(120)
+                    .shadow(color: Color("font"), radius: 10)
             }
             .ignoresSafeArea()
             .onAppear(perform: animateSplash)
@@ -40,7 +41,7 @@ struct Splash: View {
     func animateSplash() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             
-            withAnimation(Animation.easeOut(duration: 0.5)) {
+            withAnimation(Animation.easeOut(duration: 0.7)) {
                 animate.toggle()
                 endSplash.toggle()
             }

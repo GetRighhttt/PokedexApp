@@ -12,6 +12,7 @@
 		11067A2F292E725000C73E4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11067A2E292E725000C73E4B /* Assets.xcassets */; };
 		11067A32292E725000C73E4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11067A31292E725000C73E4B /* Preview Assets.xcassets */; };
 		11067A3C292E72F700C73E4B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11067A3B292E72F700C73E4B /* Splash.swift */; };
+		11067A3E292E7D8200C73E4B /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11067A3D292E7D8200C73E4B /* HomePage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		11067A2E292E725000C73E4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11067A31292E725000C73E4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		11067A3B292E72F700C73E4B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		11067A3D292E7D8200C73E4B /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				11067A2C292E724E00C73E4B /* ContentView.swift */,
 				11067A3B292E72F700C73E4B /* Splash.swift */,
+				11067A3D292E7D8200C73E4B /* HomePage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				11067A2D292E724E00C73E4B /* ContentView.swift in Sources */,
 				11067A3C292E72F700C73E4B /* Splash.swift in Sources */,
 				11067A2B292E724E00C73E4B /* PokedexAppApp.swift in Sources */,
+				11067A3E292E7D8200C73E4B /* HomePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
