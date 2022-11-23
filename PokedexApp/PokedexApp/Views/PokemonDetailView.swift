@@ -36,9 +36,6 @@ struct PokemonDetailView: View {
                     Text("**Weight**: \(viewModel.formatHW(value: viewModel.pokemonDetails?.weight ?? 0)) M")
                         .font(.system(size: 14, weight: .regular, design: .monospaced))
                         .foregroundColor(Color("font"))
-                    Text("**Base Experience**: \(viewModel.pokemonDetails?.base_Experience ?? 0)")
-                        .font(.system(size: 14, weight: .regular, design: .monospaced))
-                        .foregroundColor(Color("font"))
                     
                 }
                 .shadow(color: Color("font"), radius: 10)

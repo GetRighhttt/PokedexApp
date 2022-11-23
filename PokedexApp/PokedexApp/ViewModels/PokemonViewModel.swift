@@ -40,7 +40,7 @@ final class ViewModel: ObservableObject {
     func getDetails(pokemon: Pokemon) {
         let id = getPokemonIndex(pokemon: pokemon)
         
-        self.pokemonDetails = PokemonDetail(id: 0, height: 0, weight: 0, base_Experience: 0, stats: [PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(name: "", url: ""))], types: [PokemonTypes(slot:0, type: SpecificType(name: "", url: ""))])
+        self.pokemonDetails = PokemonDetail(id: 0, height: 0, weight: 0, stats: [PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(name: "", url: ""))], types: [PokemonTypes(slot:0, type: SpecificType(name: "", url: ""))])
         
         pokemonManager.getDetailedPokemon(id: id) { data in
             DispatchQueue.main.async {
@@ -48,6 +48,18 @@ final class ViewModel: ObservableObject {
             }
         }
     }
+    
+//    func getStats(pokemon: PokemonStats) {
+//        let id = getPokemonIndex(pokemon: pokemon)
+//        
+//        self.pokemonStats = PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(name: "", url: ""))])
+//        pokemonManager.getDetailedPokemon(id: id) { data in
+//            
+//            DispatchQueue.main.async {
+//                self.pokemonStats = data
+//            }
+//        }
+//    }
     
     // format height and weight of JSON
     func formatHW(value: Int) -> String {

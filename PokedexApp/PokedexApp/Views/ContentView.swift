@@ -35,7 +35,7 @@ struct ContentView: View {
                     .navigationTitle("Pokedex")
                     .padding()
                 }.searchable(text: $viewModel.searchText)
-                .shadow(color: Color("font"), radius: 10)
+                .shadow(color: Color("font"), radius: 5)
             }
         }.environmentObject(viewModel)
             .accentColor(Color("font"))

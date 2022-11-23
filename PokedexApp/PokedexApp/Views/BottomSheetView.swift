@@ -35,6 +35,15 @@ struct BottomSheetView: View {
                 Text("\(pokemon.name.capitalized)")
                     .font(.system(size: 25, weight: .heavy, design: .monospaced))
                     .padding()
+//                Text("Base Stat: \(viewModel.pokemonStats?.base_stat ?? 0)")
+//                    .font(.system(size: 15, weight: .heavy, design: .monospaced))
+//                Text("Effort: \(viewModel.pokemonStats?.effort ?? 0)")
+//                    .font(.system(size: 15, weight: .heavy, design: .monospaced))
+//                Text("Stats: \(viewModel.pokemonStats?.stat.name ?? "Stat")")
+//                    .font(.system(size: 15, weight: .heavy, design: .monospaced))
+//                Text("Type: \(viewModel.pokemonTypes?.type.name ?? "Type")")
+//                    .font(.system(size: 15, weight: .heavy, design: .monospaced))
+//                    .padding(.bottom, 20)
                 Button("Go to JSON") {
                     openURL(URL(string: "\(pokemon.url)")!)
                         }
