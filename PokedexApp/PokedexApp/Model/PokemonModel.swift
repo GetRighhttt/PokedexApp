@@ -30,7 +30,7 @@ struct PokemonDetail: Codable {
     let stats: [PokemonStats]
     let types: [PokemonTypes]
     
-    static var samplePokemonDetails = PokemonDetail(id: 0, height: 0, weight: 0, stats: [PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(name: "charzard", url: "https://pokeapi.co/api/v2/pokemon/4/"))], types: [PokemonTypes(slot: 0, type: SpecificType(name: "charzard", url: "https://pokeapi.co/api/v2/pokemon/4/"))])
+    static var samplePokemonDetails = PokemonDetail(id: 0, height: 0, weight: 0, stats: [PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(id: 0, name: "charzard", url: "https://pokeapi.co/api/v2/pokemon/4/"))], types: [PokemonTypes(slot: 0, type: SpecificType(id: 0, name: "charzard", url: "https://pokeapi.co/api/v2/pokemon/4/"))])
     
 }
 
@@ -41,6 +41,7 @@ struct PokemonStats: Codable {
 }
 
 struct SpecificStat: Codable {
+    let id: Int
     let name: String
     let url: String
 }
@@ -51,6 +52,7 @@ struct PokemonTypes: Codable {
 }
 
 struct SpecificType: Codable {
+    let id: Int
     let name: String
     let url: String
 }

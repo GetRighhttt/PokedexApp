@@ -34,24 +34,25 @@ class PokemonManager: ObservableObject {
         }
     }
     
-    // gets the pokemon stats
-//    func getPokemonStats() -> SpecificStat {
-//
-//        // decode and get the stat
-//        let data: PokemonStats = Bundle.main.decode(file: "pokemon")
-//        let pokemonStat: SpecificStat = data.stat
-//
-//        return pokemonStat
-//    }
-//
-//    // get the pokemon types
-//    func getPokemonType() -> SpecificType {
-//
-//        // decode and return the types
-//        let data: PokemonTypes = Bundle.main.decode(file: "pokemon")
-//        let pokemonType: SpecificType = data.type
-//
-//        return pokemonType
-//
-//    }
+    func getPokemonStats(id: Int, _ completion:@escaping(SpecificStat) -> ()) {
+        
+        // call our fetch data method to get the details and return the data or an error
+        Bundle.main.fetchData(url: "https://pokeapi.co/api/v2/pokemon/\(id)/",
+                              model: SpecificStat.self) { data in
+            completion(data)
+        } failure: { error in
+            print(error)
+        }
+    }
+    
+    func getPokemonTypes(id: Int, _ completion:@escaping(SpecificType) -> ()) {
+        
+        // call our fetch data method to get the details and return the data or an error
+        Bundle.main.fetchData(url: "https://pokeapi.co/api/v2/pokemon/\(id)/",
+                              model: SpecificType.self) { data in
+            completion(data)
+        } failure: { error in
+            print(error)
+        }
+    }
 }

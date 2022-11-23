@@ -13,8 +13,8 @@ final class ViewModel: ObservableObject {
     
     @Published var pokemonList = [Pokemon]()
     @Published var pokemonDetails: PokemonDetail?
-    @Published var pokemonStats: PokemonStats?
-    @Published var pokemonTypes: PokemonTypes?
+    @Published var pokemonStats: SpecificStat?
+    @Published var pokemonTypes: SpecificType?
     @Published var searchText = ""
     
     // search to filter pokemon
@@ -40,26 +40,26 @@ final class ViewModel: ObservableObject {
     func getDetails(pokemon: Pokemon) {
         let id = getPokemonIndex(pokemon: pokemon)
         
-        self.pokemonDetails = PokemonDetail(id: 0, height: 0, weight: 0, stats: [PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(name: "", url: ""))], types: [PokemonTypes(slot:0, type: SpecificType(name: "", url: ""))])
+        self.pokemonDetails = PokemonDetail(id: 0, height: 0, weight: 0, stats: [PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(id: 0, name: "", url: ""))], types: [PokemonTypes(slot:0, type: SpecificType(id: 0, name: "", url: ""))])
+        self.pokemonStats = SpecificStat(id: 0, name: "", url: "")
+        self.pokemonTypes = SpecificType(id: 0, name: "", url: "")
         
         pokemonManager.getDetailedPokemon(id: id) { data in
             DispatchQueue.main.async {
                 self.pokemonDetails = data
             }
         }
+        pokemonManager.getPokemonStats(id: id) { data in
+            DispatchQueue.main.async {
+                self.pokemonStats = data
+            }
+        }
+        pokemonManager.getPokemonTypes(id: id) { data in
+            DispatchQueue.main.async {
+                self.pokemonTypes = data
+            }
+        }
     }
-    
-//    func getStats(pokemon: PokemonStats) {
-//        let id = getPokemonIndex(pokemon: pokemon)
-//        
-//        self.pokemonStats = PokemonStats(base_stat: 0, effort: 0, stat: SpecificStat(name: "", url: ""))])
-//        pokemonManager.getDetailedPokemon(id: id) { data in
-//            
-//            DispatchQueue.main.async {
-//                self.pokemonStats = data
-//            }
-//        }
-//    }
     
     // format height and weight of JSON
     func formatHW(value: Int) -> String {
