@@ -10,14 +10,20 @@ import SwiftUI
 struct PokemonDetailView: View {
     
     @EnvironmentObject var viewModel: ViewModel
+    
     let pokemon: Pokemon
     
+    @State var showSheet = false
+
     var body: some View {
         ZStack {
             Color("bg").ignoresSafeArea()
             VStack {
                 
                 PokemonView(pokemon: pokemon)
+                    .onTapGesture {
+                        showSheet.toggle()
+                    }
                 
                 VStack(spacing: 10) {
                     
@@ -35,9 +41,14 @@ struct PokemonDetailView: View {
                         .foregroundColor(Color("font"))
                     
                 }
+                .shadow(color: Color("font"), radius: 10)
             }
             .onAppear {
                 viewModel.getDetails(pokemon: pokemon)
+            }
+            .sheet(isPresented: $showSheet) { // we call the sheet outside of the views total stack
+                BottomSheetView(pokemon: pokemon)
+                    .presentationDetents([.medium, .large]) // how we control the sheets size
             }
         }
     }

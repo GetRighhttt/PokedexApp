@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/**
+ Here we show how to style the navigation link back button and how to use an environment object with multiple views.
+ */
 struct ContentView: View {
     
     @StateObject var viewModel = ViewModel()
@@ -25,12 +28,17 @@ struct ContentView: View {
                         ForEach(viewModel.filteredPokemon) { pokemon in
                             NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
                                 PokemonView(pokemon: pokemon)
-                            }
+                            }.foregroundColor(Color("font"))
                         }
-                    }
-                }.shadow(color: Color("font"), radius: 10)
+                    } // animation of views
+                    .animation(.easeIn(duration: 0.3), value: viewModel.filteredPokemon.count)
+                    .navigationTitle("Pokedex")
+                    .padding()
+                }.searchable(text: $viewModel.searchText)
+                .shadow(color: Color("font"), radius: 10)
             }
         }.environmentObject(viewModel)
+            .accentColor(Color("font"))
     }
 }
 

@@ -11,7 +11,7 @@ import Foundation
  Makes it easier for us to retrieve data in ViewModel
  */
 
-class PokemonManager {
+class PokemonManager: ObservableObject {
     
     // gets the list of all pokemon
     func getPokemon() -> [Pokemon] {
